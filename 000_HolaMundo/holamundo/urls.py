@@ -1,5 +1,4 @@
 """holamundo URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
@@ -19,7 +18,8 @@ from .views import saludo, despedida, adulto
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("adulto/<int>:edad/", saludo, name="saludo"),  # -> enviando variable
     path("saludo/", saludo, name="saludo"),
     path("despedida/", despedida, name="despedida"),
-    path("adulto/<int:edad>/", adulto, name="adulto")
+    path("adulto/<int:edad>/", adulto, name="adulto"),
 ]
