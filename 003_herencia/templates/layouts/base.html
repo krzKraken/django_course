@@ -12,24 +12,15 @@
   <title> {% block title %}{% endblock %} </title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li>
-        <h3 id="logo">logo h3</h3>
-        <a href="#"> logo</a>
-        <a href="#"> Herencia</a>
-        <a href="#"> Otra</a>
-        <a href="#"> Ejemplo</a>
-      </li>
-    </ul>
-  </nav>
+
+  {# Nav Menu bar extraido #}
+  {% include 'layouts/partials/menu.html' %}
   <main>
     {% block content %}{% endblock %}
   </main>
 
-  <footer>
-    <p>Todos los derechos reservados</p>
-  </footer>
+  {# Footer extraido #}
+  {% include 'layouts/partials/footer.html' %}
 
 
   {% block scripts %}{% endblock %}
