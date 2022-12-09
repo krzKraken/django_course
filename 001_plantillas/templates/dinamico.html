@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dinamico</title>
-	</head>
-	<body>
-		<h1>hola {{name}}</h1>
-		<h3>Categorias: {{categories.0}}</h3>
-		<ul>
-			{% for category in categories %}
 
-			<li>{{category}}</li>
-			{% endfor %}
-		</ul>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Dinamico</title>
+</head>
+
+<body>
+	{# Esto es un comentario de una unica linea #}
+	{% comment %}
+	esto es un comentario de muchas lineas
+	{% endcomment%}
+	<!-- Comentario html que aparece en el renderizado de la pagina -->
+
+	<h1>hola {{name}}</h1>
+
+	<h3>Categorias: {{categories.0}}</h3>
+	<ul>
+		{% for category in categories %}
+
+		<li>{{category}}</li>
+		{% endfor %}
+
+		{% comment %}
+		Se pueden realizar varios filtros separando del pie
+		Por ejemplo: {{categories}}
+		{% endcomment %}
+		<h2>Total de categorias: {{categories|length}} </h2>
+
+
+
+	</ul>
+</body>
+
 </html>
