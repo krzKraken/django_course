@@ -6,10 +6,12 @@ En esta carpeta van a ir todos los archivos estaticos CSS, Javascript e imagenes
 
 ## **2. crear la variable de entorno..**
 
+```
 STATICFILES_DIRS = [
 BASE_DIR / "static",
 "/var/www/static" # <- Preparado para deploy
 ]
+```
 
 ## **3. las importaciones se realizan de la siguiente manera**
 
