@@ -1,19 +1,19 @@
 {% extends './layouts/base.html' %}
+
 {% load static %}
 
 {% block content%}
 
-<div>
-  <h1>Pedrito Coco</h1>
-</div>
 
-<div>
-  <p>
-  <h2>titulo</h2>
-  <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae unde quo, architecto neque quia quis, ex ratione
-    quos veniam, fugiat voluptatum iure eius exercitationem labore a! Nesciunt quasi esse harum!</h3>
-  </p>
-  <img src="{% static 'img.jpg' %}" alt="">
+<h1 style="padding: 20px;">Pedrito Coco - Fotografo</h1>
+
+<div class="about">
+  <img src="https://picsum.photos/300/350" alt="">
+  <div class="about-content">
+    <h3>titulo</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae unde quo, architecto neque quia quis, ex ratione
+      quos veniam, fugiat voluptatum iure eius exercitationem labore a! Nesciunt quasi esse harum!</p>
+  </div>
 </div>
 
 {% endblock %}
