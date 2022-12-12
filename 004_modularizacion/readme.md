@@ -72,3 +72,40 @@ En este caso nuestra aplicacion es comentarios y se incluyen todas las urls que 
 ** Importante: para acceder a esa ruta, en el navegador debemos incluir en la ruta "comentarios/" previa a la ruta que creamos es decir... **
 
 > HOST_NAME/comentarios/test/
+
+# Creacion y eliminacion de datos
+
+## 1.- Para la creacion de datos en la base de datos tenemos dos maneras, una es mediante las vista (views) en el modulo.
+
+```
+def create(request):
+  objeto = ModeloObjeto("<parametro1>"="<valor1>",...)
+  objeto.save() # <- Guarda en la base de datos
+  return httpResponse("Mensaje de confirmacion")
+```
+
+Otra forma, mediante objects
+
+```
+def create(request):
+  objeto = ModeloObjeto.create("<parametro1>"="<valor1>",...)
+  return HttpResponse("Respuesta de confirmacion")
+
+```
+
+## 2.- Para la eliminacion de datos en la base de datos
+
+```
+def delete(request):
+  objeto = ModeloObjeto.objects.get(id=<valor>)
+  objeto.delete()
+  return HttpResponse("Respuesta de confirmacion")
+```
+
+Otra forma es utilizando los metodos objects
+
+```
+def delete(request):
+  ModeloObjeto.objects.filter(id=<valor>).delete()
+  return HttpReponse("Respuesta de confirmacion")
+```
