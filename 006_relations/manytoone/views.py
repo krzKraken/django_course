@@ -28,5 +28,5 @@ def manytoone(request):
     # Reportero a articulo
     # Cuando se va en direccion de 1 a varios, se debe colocar <nombreModelo>_set y de ahi en adelante se convierte en una consulta .all() .filter() etc.
     result = rep.article_set.all()
-    result = rep.article_set.count()
+    # result = rep.article_set.count()
     return HttpResponse(result)
