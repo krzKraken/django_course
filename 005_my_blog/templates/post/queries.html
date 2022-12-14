@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+</head>
+<body>
+  <h1>Consultas simples</h1>
+  <h3> Todos los autores </h3>
+  <ul>
+    {% for author in authors %}
+    <li>{{author.name}} ( {{author.email}} )</li>
+    {% endfor%}
+  </ul>
+  <h3>Obteniendo los 10 valores pasados de los 5 primerops</h3>
+  <ul>
+    {% for of in offsets %}
+    <li>{{of.email}}</li>
+    {%endfor%}
+  </ul>
+  <h3>Obteniendo unico autor por id</h3>
+  <ul>
+    <li>
+      {{author}}
+    </li>
+  </ul>
+  {% for authorFiltered in filtered %}
+  <li>
+    {{ authorFiltered.name }} | {{authorFiltered.email}}
+  </li>
+  {% endfor %}
+  </ul>
+  <h3>Obteniendo los 10 primeros resultados (limit)</h3>
+  <ul>
+    {% for limit in limits %}
+    <li>{{limit.name}} | {{limit.email}}</li>
+    {% endfor %}
+
+  </ul>
+  <h3>Filtrado autor donde Author es "frobertson@example.org"</h3>
+  <ul>
+
+
+    <h3>Total de autores: {{authors|length}}</h3>
+
+    <h1>Consultas ordenadas</h1>
+    <h3>Consultando todos los elementos ORDENADOS POR EMAIL</h3>
+    <ul>
+      {% for order in orders %}
+      <li>
+        {{order.email}}
+      </li>
+      {% endfor %}
+    </ul>
+</body>
+</html>
