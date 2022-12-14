@@ -35,6 +35,8 @@ Para utilizar el paquete seed debemos utilizarlo de la siguiente manera.
 
 # CONSULTAS
 
+https://docs.djangoproject.com/en/4.1/topics/db/queries/
+
 ### Todas las consultas se van a crear en el controlador (views), Ejemplo:
 
 views.py
@@ -125,6 +127,15 @@ _
 
 # Consultas ordenadas
 
+Se pueden hacer consultas ordenadas por algun valor de los elementos de la siguiente manera
+
+```
+def queries(request):
+    $ Obtener todos los email de ususarios ordenados por email
+    orders = Author.objects.all().order_by("email")
+    return render(request, "<template_path>", {'context_name':orders}
+```
+
 Se pueden realizar consultas mas complejas como que un valor sea mayor o menor, contenga o sea exacto
 
 ```
@@ -134,4 +145,16 @@ def queries(request):
     resultsFiltered = ModelName.objects.filter(<variable__lte> = 15)
 _
     return render(request, "<template_path>", {"context_name": resultsFiltered})
+```
+
+# Actualizacion de datos
+
+La actualización de datos se la puede realizar de una forma facil combinando la busqueda y el guardado en la base de datos
+
+```
+def update(request):
+    response = ModelName.objects.get(id=1)
+    response.<parameter_name> = <new_value>
+    response.save()
+    return HttpResponse("Modificado")
 ```

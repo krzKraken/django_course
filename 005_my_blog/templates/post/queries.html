@@ -14,7 +14,7 @@
     <li>{{author.name}} ( {{author.email}} )</li>
     {% endfor%}
   </ul>
-  <h3>Obteniendo los 10 valores pasados de los 5 primerops</h3>
+  <h3>Obteniendo los 5 valores pasados de los 5 primeros</h3>
   <ul>
     {% for of in offsets %}
     <li>{{of.email}}</li>
@@ -25,34 +25,50 @@
     <li>
       {{author}}
     </li>
+
   </ul>
-  {% for authorFiltered in filtered %}
-  <li>
-    {{ authorFiltered.name }} | {{authorFiltered.email}}
-  </li>
-  {% endfor %}
-  </ul>
+
   <h3>Obteniendo los 10 primeros resultados (limit)</h3>
   <ul>
     {% for limit in limits %}
     <li>{{limit.name}} | {{limit.email}}</li>
     {% endfor %}
-
   </ul>
+
   <h3>Filtrado autor donde Author es "frobertson@example.org"</h3>
   <ul>
+    {% for authorFiltered in filtered %}
+    <li>
+      {{ authorFiltered.name }} | {{authorFiltered.email}}
+    </li>
+    {% endfor %}
+  </ul>
 
 
-    <h3>Total de autores: {{authors|length}}</h3>
 
-    <h1>Consultas ordenadas</h1>
-    <h3>Consultando todos los elementos ORDENADOS POR EMAIL</h3>
-    <ul>
-      {% for order in orders %}
-      <li>
-        {{order.email}}
-      </li>
-      {% endfor %}
-    </ul>
+  <h1>Consultas ordenadas</h1>
+  <h3>Consultando todos los elementos ORDENADOS POR EMAIL</h3>
+  <ul>
+    {% for order in orders %}
+    <li>
+      {{order.email}}
+    </li>
+    {% endfor %}
+  </ul>
+  <h3>Consulta de elementos que id es menor a 15</h3>
+  <ul>
+    {% for filteredCondition in filteredConditions %}
+    <li>
+      {{ filteredCondition.email}}
+    </li>
+    {% endfor %}
+  </ul>
+  <h3>Muestra todos los autores que tienen email ".net"</h3>
+  <ul>
+    {% for filteredContain in filteredContains %}
+    <li>{{filteredContain.email}}</li>
+    {% endfor %}
+  </ul>
+  <h3>Total de autores: {{authors|length}}</h3>
 </body>
 </html>
