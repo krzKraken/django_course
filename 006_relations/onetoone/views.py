@@ -4,7 +4,7 @@ from .models import Place, Restaurant
 
 # Create your views here.
 def create(request):
-    # Creacion de elementos
+    # Creacion de elementos con relacion 1 a 1
     place = Place(name="lugar 1", address="calle demo")
     place.save()
 
