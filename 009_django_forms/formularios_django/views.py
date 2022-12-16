@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
 
 
 def getform(request):
@@ -36,3 +36,8 @@ def postgoal(request):
     if request.method != "POST":
         return HttpResponse("Metodo no permitido")
     return HttpResponse(request.POST["name"])
+
+
+def widget(request):
+    form = ContactForm()
+    return render(request, "widget.html", {"form": form})

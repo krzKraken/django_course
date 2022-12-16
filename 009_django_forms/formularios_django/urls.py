@@ -8,4 +8,6 @@ urlpatterns = [
     path("getgoal/", views.getgoal, name="getgoal"),
     path("postform/", views.postform, name="postform"),
     path("postgoal/", views.postgoal, name="postgoal"),
+    # Formulario 2
+    path("widget/", views.widget, name="widget"),
 ]
