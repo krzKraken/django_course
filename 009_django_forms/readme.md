@@ -149,3 +149,5 @@ campo_texto = forms.CharField(
 ```
 
 de esta forma en el html podemos importar un estilo CSS o de algun framework de nuestra eleccion
+
+ahora si en nuestro html hacemos una imortacion de algin framework o de algun archivo de estilos podemos asociarlos a esta clase y tendriamos como resultado la personalizacion de nuestro html

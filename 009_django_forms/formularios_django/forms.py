@@ -1,6 +1,7 @@
 from django import forms
 
-# Se declaran similar a la forma de declarar los modelos
+# Se declaran similar a la forma de declarar los modelos\
+# Formulario normal con html
 class CommentForm(forms.Form):
     name = forms.CharField(
         label="Escribe tu nombre", max_length=100, help_text="100 caracteres maximo"
@@ -9,12 +10,15 @@ class CommentForm(forms.Form):
     comment = forms.CharField()
 
 
+# Formulario con modelos de django
 class ContactForm(forms.Form):
     name = forms.CharField(
         label=" Nombre",
         max_length=50,
         widget=forms.TextInput(
-            attrs={"class": "form-control"},
+            attrs={
+                "class": "form-control"
+            },  # <-- clase "Form-control" (del framework botstrap)
         ),
     )
     email = forms.EmailField(
@@ -35,6 +39,8 @@ class ContactForm(forms.Form):
     campo_texto = forms.CharField(
         label="Campo de texto",
         widget=forms.TextInput(
-            attrs={"class": "clase_nueva"},
+            attrs={
+                "class": "clase_nueva"
+            },  # <-- Clase "clase_nueva" es una clase personalizada
         ),
     )
