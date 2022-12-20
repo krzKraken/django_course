@@ -39,5 +39,15 @@ def postgoal(request):
 
 
 def widget(request):
-    form = ContactForm()
-    return render(request, "widget.html", {"form": form})
+    if request.method == "GET":
+        form = ContactForm()
+        return render(request, "widget.html", {"form": form})
+
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # TODO:todas las acciones que se realiazan cuando sea valido, crear valor en base de datos, actualizar datos, etc
+            return HttpResponse("Valido")
+        else:
+            # TODO: Todas las acciones que sean necesarias en caso de no ser validos los valores, en este caso se muetran los errores en los formularios
+            return render(request, "widget.html", {"form": form})
